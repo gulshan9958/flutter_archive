@@ -247,8 +247,8 @@ public class SwiftFlutterArchivePlugin: NSObject, FlutterPlugin {
             at: sourceURL,
             includingPropertiesForKeys: [.isRegularFileKey],
             options: recurseSubDirs ?
-                [.skipsHiddenFiles, .skipsPackageDescendants] :
-                [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants])
+                [.skipsPackageDescendants] :
+                [.skipsPackageDescendants, .skipsSubdirectoryDescendants])
         {
             for case let fileURL as URL in enumerator {
                 let fileAttributes = try fileURL.resourceValues(forKeys: [.isRegularFileKey])
